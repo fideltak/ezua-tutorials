@@ -9,7 +9,7 @@ DOMAIN_NAME = "svc.cluster.local"
 NAMESPACE = open("/var/run/secrets/kubernetes.io/serviceaccount/namespace", "r").read()
 DEPLOYMENT_NAME = "llm"
 MODEL_NAME = DEPLOYMENT_NAME
-SVC = f"{DEPLOYMENT_NAME}-transformer-default.{NAMESPACE}.{DOMAIN_NAME}"
+SVC = f"{DEPLOYMENT_NAME}-transformer.{NAMESPACE}.{DOMAIN_NAME}"
 URL = f"https://{SVC}/v1/models/{MODEL_NAME}:predict"
 
 SYSTEM_MESSAGE = "You are an AI assistant. You will be given a task. You must generate a detailed answer."
