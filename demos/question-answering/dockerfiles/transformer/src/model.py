@@ -40,7 +40,7 @@ class Transformer(Model):
         model_name = deployment_name
 
         # Build the vectorstore URL
-        svc = f'{deployment_name}-predictor-default.{namespace}.{domain_name}'
+        svc = f'{deployment_name}-predictor.{namespace}.{domain_name}'
         url = f"https://{svc}/v1/models/{model_name}:predict"
         return url
 
